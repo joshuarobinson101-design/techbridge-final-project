@@ -1,5 +1,4 @@
-
-const API_BASE = isLocal ? "http://localhost:3000" : "https://techbridge-i5aw.onrender.com";
+const API_BASE = "https://techbridge-final-project.onrender.com";
 
 async function api(path, options) {
   const response = await fetch(API_BASE + path, options);
