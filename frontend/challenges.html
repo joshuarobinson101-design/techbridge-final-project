@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse practical Data Analytics and Web Development challenges in the TechBridge Challenge Hub. Filter by track and difficulty and see what you would build.">
+  <title>Challenge Hub | TechBridge</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/api.js" defer></script>
+  <script src="scripts/challenges.js" defer></script>
+</head>
+<body class="challenges-page">
+
+  <header id="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="../assets/images/techbridge.png" alt="TechBridge logo" width="160">
+    </a>
+    <nav id="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="challenges.html" aria-current="page">Challenge Hub</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <h1>TechBridge Challenge Hub</h1>
+      <p class="tagline">What will you actually be working on?</p>
+      <p class="hero-text">
+        Explore practical challenges designed to help TechBridge interns apply their skills
+        and gain real-world experience. Browse them, filter them, and open any challenge to
+        see exactly what you would build.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="#hub">Browse Challenges</a>
+        <a class="btn btn-secondary" href="dashboard.html">Go to Dashboard</a>
+      </p>
+    </section>
+
+    <!-- Glass carousel: JavaScript fills the empty <ul> with the featured challenges -->
+    <section id="featured" aria-labelledby="featured-title">
+      <div class="glow glow-1" aria-hidden="true"></div>
+      <div class="glow glow-2" aria-hidden="true"></div>
+      <div class="glow glow-3" aria-hidden="true"></div>
+
+      <div class="featured-head">
+        <div>
+          <h2 id="featured-title">Featured challenges</h2>
+          <p>A quick taste of the work. Use the arrows, swipe, or the dots, then select <strong>View Challenge</strong> on any card.</p>
+        </div>
+        <div class="carousel-controls">
+          <button type="button" class="cc-btn" id="car-pause" aria-pressed="false" aria-label="Pause automatic sliding">Pause</button>
+          <button type="button" class="cc-btn cc-arrow" id="car-prev" aria-label="Previous challenges">&#8592;</button>
+          <button type="button" class="cc-btn cc-arrow" id="car-next" aria-label="Next challenges">&#8594;</button>
+        </div>
+      </div>
+
+      <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="Featured challenges" tabindex="0">
+        <ul class="car-track" id="car-track"></ul>
+      </div>
+      <div class="car-dots" id="car-dots" role="group" aria-label="Choose a carousel position"></div>
+    </section>
+
+    <section id="hub">
+      <h2>Find a challenge</h2>
+      <p>Pick a track, pick a difficulty, or search by name. The list updates straight away.</p>
+
+      <div class="filter-panel">
+        <div class="filter-group">
+          <p class="filter-label" id="track-label">Track</p>
+          <div class="chips" role="group" aria-labelledby="track-label">
+            <button type="button" class="chip" data-filter="track" data-value="all" aria-pressed="true">All</button>
+            <button type="button" class="chip chip-data" data-filter="track" data-value="Data Analytics" aria-pressed="false">Data Analytics</button>
+            <button type="button" class="chip chip-web" data-filter="track" data-value="Web Development" aria-pressed="false">Web Development</button>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <p class="filter-label" id="level-label">Difficulty</p>
+          <div class="chips" role="group" aria-labelledby="level-label">
+            <button type="button" class="chip" data-filter="difficulty" data-value="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-filter="difficulty" data-value="Beginner" aria-pressed="false">Beginner</button>
+            <button type="button" class="chip" data-filter="difficulty" data-value="Intermediate" aria-pressed="false">Intermediate</button>
+            <button type="button" class="chip" data-filter="difficulty" data-value="Advanced" aria-pressed="false">Advanced</button>
+          </div>
+        </div>
+
+        <div class="filter-row">
+          <div class="field">
+            <label for="search">Search by name</label>
+            <input type="search" id="search" placeholder="e.g. dashboard, form, SQL" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="sort">Sort by</label>
+            <select id="sort">
+              <option value="default">Default order</option>
+              <option value="easiest">Easiest first</option>
+              <option value="hardest">Hardest first</option>
+            </select>
+          </div>
+          <button type="button" class="btn-reset" id="reset-filters">Reset filters</button>
+        </div>
+      </div>
+
+      <p class="result-count" id="result-count" aria-live="polite"></p>
+
+      <ul class="challenge-grid" id="challenge-grid"></ul>
+
+      <div class="no-results" id="no-results" hidden>
+        <h3>No challenges match those filters</h3>
+        <p>Try a different track or difficulty, or clear your search.</p>
+        <button type="button" class="btn btn-primary" id="no-results-reset">Reset filters</button>
+      </div>
+
+      <noscript><p class="noscript-note">The Challenge Hub needs JavaScript to show the challenges. Please turn JavaScript on and reload the page.</p></noscript>
+    </section>
+
+    
+  </main>
+
+  <!-- Challenge details pop-up. <dialog> gives us Esc-to-close and focus handling for free. -->
+  <dialog id="challenge-modal" aria-labelledby="modal-title">
+    <div class="modal-inner" id="modal-body"></div>
+  </dialog>
+
+  <footer id="site-footer">
+    <p><strong>TechBridge</strong> by Baselink Services Limited</p>
+    <p>Bridging Learning to Real-World Experience</p>
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="challenges.html">Challenge Hub</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <ul class="social-links">
+      <li><a href="https://www.linkedin.com/company/techbridge-services/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/p/Baselink-Services-100066771475783/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="https://chat.whatsapp.com/FqpBvYS4oaK32cXDxc8JIS" target="_blank" rel="noopener noreferrer">WhatsApp Community</a></li>
+    </ul>
+    <p>&copy; 2026 Baselink Services Limited. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

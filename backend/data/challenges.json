@@ -1,0 +1,282 @@
+[
+  {
+    "id": "da-1",
+    "title": "Clean a Messy Sales Sheet",
+    "track": "Data Analytics",
+    "difficulty": "Beginner",
+    "time": "2 to 3 hours",
+    "description": "A small sales sheet has duplicate orders, blank cells, dates typed as text and city names written five different ways. Make the data trustworthy.",
+    "outcome": "A clean sales sheet with no duplicates, consistent names and real dates, plus a short log of every change you made.",
+    "objective": "Practise the first step of every analysis: making raw data reliable before you try to learn anything from it.",
+    "skills": [
+      "Removing duplicates",
+      "TRIM, PROPER and CLEAN",
+      "Find and Replace",
+      "Fixing data types",
+      "Filters"
+    ],
+    "tools": [
+      "Google Sheets",
+      "Microsoft Excel"
+    ],
+    "produce": [
+      "The cleaned sheet, with the original kept untouched on a separate tab",
+      "A \"Changes log\" tab listing each problem you found and how you fixed it",
+      "Three sentences on what looked wrong with the data and why it matters"
+    ],
+    "stumble": "Cleaning the original sheet in place. Always keep an untouched copy so you can undo mistakes. Also watch for numbers or dates stored as text: they look fine but will not sort or add up correctly."
+  },
+  {
+    "id": "da-2",
+    "title": "Expense Analysis with Pivot Tables",
+    "track": "Data Analytics",
+    "difficulty": "Beginner",
+    "time": "3 to 4 hours",
+    "description": "A small business gives you one month of expenses. Use pivot tables to find out where the money is actually going.",
+    "outcome": "Pivot tables showing spending by category and by week, one clear chart, and three plain-English findings.",
+    "objective": "Learn to summarise a long list of transactions into a few numbers a business owner can act on.",
+    "skills": [
+      "Pivot tables",
+      "SUM and SUMIF",
+      "Percent of total",
+      "Basic charts"
+    ],
+    "tools": [
+      "Google Sheets",
+      "Microsoft Excel"
+    ],
+    "produce": [
+      "A pivot table of spending by category",
+      "A pivot table of spending by week",
+      "One chart that makes the biggest cost obvious",
+      "Three findings written for someone who has never seen the data"
+    ],
+    "stumble": "Pivot tables refuse to build when a column header is blank, and they do not pick up new rows unless you refresh or extend the range. Check both before assuming the tool is broken."
+  },
+  {
+    "id": "da-3",
+    "title": "Match Two Sheets with XLOOKUP",
+    "track": "Data Analytics",
+    "difficulty": "Intermediate",
+    "time": "3 hours",
+    "description": "You have an orders sheet and a separate customers sheet. Bring each customer's city and plan into the orders, even though some IDs refuse to match.",
+    "outcome": "One combined sheet with customer details on every order, plus a list of unmatched IDs with the reason each one failed.",
+    "objective": "Learn how to combine related data and how to investigate when it does not line up.",
+    "skills": [
+      "XLOOKUP or VLOOKUP",
+      "Exact match",
+      "IFERROR",
+      "Spotting hidden mismatches"
+    ],
+    "tools": [
+      "Google Sheets",
+      "Microsoft Excel"
+    ],
+    "produce": [
+      "The orders sheet with customer city and plan filled in",
+      "A short list of IDs that did not match, each with a reason",
+      "A note on how you fixed or handled the mismatches"
+    ],
+    "stumble": "Seeing #N/A and assuming the customer is missing. Most of the time one ID is stored as text and the other as a number, or there is a hidden space at the end. Check the values before blaming the data."
+  },
+  {
+    "id": "da-4",
+    "title": "Customer Churn Analysis with SQL",
+    "track": "Data Analytics",
+    "difficulty": "Intermediate",
+    "time": "4 to 5 hours",
+    "description": "Use SQL on a customers table and a subscriptions table from a small subscription business to find out who is leaving, and when.",
+    "outcome": "A set of commented queries and results that answer who left, which plan loses the most customers, and how long people stay, with a short recommendation.",
+    "objective": "Use SQL to answer real business questions across more than one table.",
+    "skills": [
+      "SELECT and WHERE",
+      "GROUP BY",
+      "COUNT and AVG",
+      "JOIN"
+    ],
+    "tools": [
+      "SQLite with DB Browser",
+      "Any online SQL playground",
+      "A spreadsheet for the summary"
+    ],
+    "produce": [
+      "Five SQL queries, each with a comment explaining the question it answers",
+      "A small results table copied into a sheet",
+      "A three-sentence recommendation for the business"
+    ],
+    "stumble": "A JOIN that returns far more rows than you expected. Check which column really links the two tables, and count the rows before and after the join to catch duplicates."
+  },
+  {
+    "id": "da-5",
+    "title": "Monthly Sales Business Dashboard",
+    "track": "Data Analytics",
+    "difficulty": "Advanced",
+    "time": "6 to 8 hours",
+    "description": "Combine cleaning, pivot tables and charts into a one-page dashboard that a manager could understand in under a minute.",
+    "outcome": "A one-page dashboard with headline numbers, three charts that each answer a question, and a recommendation box.",
+    "objective": "Take messy data all the way to a decision-ready summary, the way a working analyst would.",
+    "skills": [
+      "Data cleaning",
+      "Pivot tables",
+      "Chart design",
+      "Slicers or filters",
+      "Presenting insights"
+    ],
+    "tools": [
+      "Google Sheets",
+      "Microsoft Excel"
+    ],
+    "produce": [
+      "A dashboard tab that fits on one screen",
+      "Supporting pivot tabs the dashboard reads from",
+      "A short written summary of what the numbers say and what to do next"
+    ],
+    "stumble": "Adding too many charts. Every chart should answer one question. If you cannot say the question out loud, remove the chart."
+  },
+  {
+    "id": "wd-1",
+    "title": "Center Anything: Hero Section and Images",
+    "track": "Web Development",
+    "difficulty": "Beginner",
+    "time": "2 hours",
+    "description": "Build a hero section where the heading, text, button and an image are centred horizontally and vertically, on a laptop and on a phone.",
+    "outcome": "A hero section that stays centred at every screen width, plus a short note explaining which CSS property did which job.",
+    "objective": "Finally understand why things refuse to centre, and learn two reliable ways to do it.",
+    "skills": [
+      "Flexbox",
+      "justify-content and align-items",
+      "margin: auto",
+      "min-height and viewport units",
+      "object-fit"
+    ],
+    "tools": [
+      "HTML",
+      "CSS",
+      "VS Code",
+      "Browser DevTools"
+    ],
+    "produce": [
+      "An index.html and style.css with the hero section",
+      "A centred image and centred text inside the same hero",
+      "Screenshots of the hero at phone, tablet and laptop widths"
+    ],
+    "stumble": "text-align: center does not move a block-level image. Make the image display: block with margin: auto, or put it inside a flex parent. Vertical centring only works when the parent has a height."
+  },
+  {
+    "id": "wd-2",
+    "title": "Responsive Landing Page",
+    "track": "Web Development",
+    "difficulty": "Beginner",
+    "time": "4 to 5 hours",
+    "description": "Design a one-page landing site for a made-up product or service, and make it look right on phones, tablets and laptops.",
+    "outcome": "A landing page with a header, hero, three feature blocks, a call-to-action and a footer that adapts to every screen size.",
+    "objective": "Practise building a complete page structure and making it responsive.",
+    "skills": [
+      "Semantic HTML",
+      "Flexbox and Grid",
+      "Media queries",
+      "Spacing and typography"
+    ],
+    "tools": [
+      "HTML",
+      "CSS",
+      "VS Code",
+      "Browser DevTools"
+    ],
+    "produce": [
+      "A finished landing page in HTML and CSS",
+      "A layout that changes at a phone breakpoint",
+      "A short note on the colours and fonts you chose and why"
+    ],
+    "stumble": "Fixed pixel widths that cause sideways scrolling on a phone. Use max-width and relative units, and never forget the viewport meta tag in the head."
+  },
+  {
+    "id": "wd-3",
+    "title": "Contact Form with Validation",
+    "track": "Web Development",
+    "difficulty": "Intermediate",
+    "time": "4 hours",
+    "description": "Build a contact form that checks what the visitor typed, shows friendly error messages and confirms success without reloading the page.",
+    "outcome": "A working form that blocks empty or invalid entries, explains each problem clearly and shows a thank-you message when it passes.",
+    "objective": "Use JavaScript to respond to what a visitor does and give helpful feedback.",
+    "skills": [
+      "Form elements and labels",
+      "JavaScript events",
+      "preventDefault",
+      "Input validation",
+      "Accessibility basics"
+    ],
+    "tools": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Browser DevTools"
+    ],
+    "produce": [
+      "A form with name, email and message fields",
+      "JavaScript that checks each field and shows an error beside it",
+      "A thank-you message that appears when everything is valid"
+    ],
+    "stumble": "The page reloads when you press submit. Add event.preventDefault() inside your submit handler. Also remember that a placeholder is not a label: every field needs a real label."
+  },
+  {
+    "id": "wd-4",
+    "title": "Product Page with Image Gallery",
+    "track": "Web Development",
+    "difficulty": "Intermediate",
+    "time": "5 hours",
+    "description": "Build a product page where clicking a thumbnail swaps the main photo, with a quantity picker and an add-to-cart message.",
+    "outcome": "A product page where the gallery, quantity buttons and add-to-cart message all work, and no image is stretched or squashed.",
+    "objective": "Learn how JavaScript changes what is on the page in response to clicks.",
+    "skills": [
+      "DOM manipulation",
+      "Event listeners",
+      "CSS Grid",
+      "aspect-ratio and object-fit"
+    ],
+    "tools": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Browser DevTools"
+    ],
+    "produce": [
+      "A product page layout that works on phone and laptop",
+      "A gallery where thumbnails change the main image",
+      "Quantity buttons that cannot go below 1",
+      "A confirmation message when the visitor adds the item"
+    ],
+    "stumble": "Photos that look stretched or squashed because they have different shapes. Give the image box an aspect-ratio and use object-fit: cover."
+  },
+  {
+    "id": "wd-5",
+    "title": "Portfolio Website, Live on GitHub Pages",
+    "track": "Web Development",
+    "difficulty": "Advanced",
+    "time": "8 to 10 hours",
+    "description": "Build a personal portfolio with a dark and light theme, then publish it so anyone can open it with a link.",
+    "outcome": "A live portfolio link with at least three sections, a theme toggle that remembers the visitor's choice, and a GitHub repository with clear commits.",
+    "objective": "Bring HTML, CSS, JavaScript and Git together in one project that you can show to employers.",
+    "skills": [
+      "Git and GitHub",
+      "GitHub Pages",
+      "CSS variables",
+      "JavaScript and localStorage",
+      "Responsive design"
+    ],
+    "tools": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Git",
+      "GitHub"
+    ],
+    "produce": [
+      "A portfolio with About, Projects and Contact sections",
+      "A dark and light theme toggle that is remembered after a refresh",
+      "A public GitHub repository with a README",
+      "A live link that you have tested on your phone"
+    ],
+    "stumble": "Images and links that work on your computer but break once published. File names are case sensitive online, so Logo.png and logo.png are different files. Double check your paths."
+  }
+]

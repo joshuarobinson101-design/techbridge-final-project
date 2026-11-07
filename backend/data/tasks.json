@@ -1,0 +1,155 @@
+[
+  {
+    "number": 1,
+    "title": "Build the TechBridge Homepage",
+    "day": 1,
+    "difficulty": "Beginner",
+    "description": "Create the first version of the TechBridge website using HTML and CSS.",
+    "build": [
+      "A first working version of the homepage",
+      "Page structure written in HTML5",
+      "Colours, spacing and layout styled with CSS"
+    ],
+    "skills": [
+      "HTML",
+      "CSS"
+    ],
+    "page": "index.html",
+    "pageLabel": "Open the homepage",
+    "id": 1
+  },
+  {
+    "number": 2,
+    "title": "Build the Programs Experience",
+    "day": 4,
+    "difficulty": "Beginner",
+    "description": "Create a Programs page that presents TechBridge's available learning programs.",
+    "build": [
+      "A Programs page for the two tracks",
+      "The same look and feel as the homepage",
+      "Navigation that links the pages together"
+    ],
+    "skills": [
+      "Page layout",
+      "Consistent styling"
+    ],
+    "page": "programs.html",
+    "pageLabel": "Open the Programs page",
+    "id": 2
+  },
+  {
+    "number": 3,
+    "title": "Build the Internship Tasks Experience",
+    "day": 8,
+    "difficulty": "Beginner → Intermediate",
+    "description": "Create an interface that presents the internship tasks and helps visitors understand the journey.",
+    "build": [
+      "An interface that shows all eight tasks",
+      "A clear sequence that explains the journey",
+      "A layout that works on desktop, tablet and mobile"
+    ],
+    "skills": [
+      "Responsive layout",
+      "Visual hierarchy"
+    ],
+    "page": "tasks.html",
+    "pageLabel": "Open the Tasks page",
+    "id": 3
+  },
+  {
+    "number": 4,
+    "title": "Build an Interactive Internship Roadmap",
+    "day": 11,
+    "difficulty": "Beginner → Intermediate",
+    "description": "Use JavaScript to let visitors switch between the Data Analytics and Web Development tracks.",
+    "build": [
+      "Track buttons that change the page without reloading",
+      "Task cards generated from JavaScript data",
+      "A journey bar that updates for each track"
+    ],
+    "skills": [
+      "JavaScript",
+      "Arrays and objects",
+      "DOM manipulation"
+    ],
+    "page": "roadmap.html",
+    "pageLabel": "Open the Roadmap",
+    "id": 4
+  },
+  {
+    "number": 5,
+    "title": "Build the Challenge Hub",
+    "day": 15,
+    "difficulty": "Intermediate",
+    "description": "Create a hub where visitors can browse, filter and explore practical challenges from both tracks.",
+    "build": [
+      "Challenge cards with track and difficulty",
+      "Track, difficulty and search filters",
+      "A details pop-up and a glass carousel"
+    ],
+    "skills": [
+      "Filtering",
+      "Event listeners",
+      "Modals"
+    ],
+    "page": "challenges.html",
+    "pageLabel": "Open the Challenge Hub",
+    "id": 5
+  },
+  {
+    "number": 6,
+    "title": "Build the Intern Dashboard",
+    "day": 19,
+    "difficulty": "Intermediate",
+    "description": "Create a dashboard where an intern can see their progress, track their tasks and explore modern web technologies.",
+    "build": [
+      "A progress section that updates as tasks are completed",
+      "A task tracker with filters and details",
+      "A Technology Explorer for frontend and backend tools"
+    ],
+    "skills": [
+      "State and progress logic",
+      "Dynamic HTML",
+      "Responsive layout"
+    ],
+    "page": "dashboard.html",
+    "pageLabel": "",
+    "id": 6
+  },
+  {
+    "number": 7,
+    "title": "Build the Task Submission System",
+    "day": 22,
+    "difficulty": "Intermediate",
+    "description": "Create an interface through which interns can prepare and submit their task work.",
+    "build": [
+      "An interface where interns prepare their task work",
+      "A way for interns to submit that work"
+    ],
+    "skills": [
+      "Forms",
+      "Workflow design"
+    ],
+    "page": "",
+    "pageLabel": "",
+    "id": 7
+  },
+  {
+    "number": 8,
+    "title": "Build the Complete Internship Platform",
+    "day": 26,
+    "difficulty": "Intermediate",
+    "description": "Combine the components built during the internship into one complete TechBridge platform.",
+    "build": [
+      "The earlier components combined into one platform",
+      "A complete experience from first visit to dashboard"
+    ],
+    "skills": [
+      "Integration",
+      "Project completion"
+    ],
+    "page": "",
+    "pageLabel": "",
+    "id": 8
+  }
+]

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The TechBridge intern dashboard: track your internship progress, work through all 8 tasks, explore the Challenge Hub and learn about modern web technologies.">
+  <title>Intern Dashboard | TechBridge</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/api.js" defer></script>
+  <script src="scripts/dashboard.js" defer></script>
+</head>
+<body class="dashboard-page">
+
+  <header id="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="../assets/images/techbridge.png" alt="TechBridge logo" width="160">
+    </a>
+    <nav id="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+        <li><a href="challenges.html">Challenge Hub</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- A. WELCOME. JavaScript fills in the changing parts (message, status, current task). -->
+    <section id="hero" class="dash-hero" aria-labelledby="welcome-title">
+      <div class="welcome">
+        <div class="avatar" aria-hidden="true">J</div>
+        <div>
+          <h1 id="welcome-title">Welcome back, <span id="intern-name">Joshua</span></h1>
+          <p class="tagline" id="intern-role">Web Development Intern</p>
+          <p class="hero-text" id="welcome-message"></p>
+          <p class="status-line">
+            <span class="status-line-label">Internship Status</span>
+            <span class="status-badge" id="intern-status"></span>
+          </p>
+          <p class="status-line" id="current-task-line"></p>
+          <p class="hero-actions">
+            <button type="button" class="btn btn-primary" id="continue-btn">Continue Task</button>
+            <a class="btn btn-secondary" href="challenges.html">Explore Challenges</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- B. PROGRESS -->
+    <section id="progress" aria-labelledby="progress-title">
+      <div class="progress-card">
+        <div class="pc-head">
+          <h2 id="progress-title">Internship Progress</h2>
+          <p class="pc-percent"><span id="pct-big">0</span><small>%</small></p>
+        </div>
+        <p class="pc-summary" id="progress-summary" aria-live="polite"></p>
+
+        <div class="bar" id="bar" role="progressbar" aria-labelledby="progress-title" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div class="bar-fill" id="bar-fill"></div>
+        </div>
+        <p class="bar-scale" aria-hidden="true"><span>Task 1</span><span>Task 8</span></p>
+
+        <ul class="stat-row">
+          <li><strong id="stat-total">8</strong><span>Total tasks</span></li>
+          <li class="s-done"><strong id="stat-done">0</strong><span>Completed</span></li>
+          <li class="s-left"><strong id="stat-left">8</strong><span>Remaining</span></li>
+          <li class="s-pct"><strong id="stat-pct">0%</strong><span>Progress</span></li>
+        </ul>
+
+        <div class="celebrate" id="celebrate" hidden>
+          <strong>All 8 tasks completed. Congratulations!</strong>
+          <p>You have built a full TechBridge internship platform from the ground up. Be proud of that, and share it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- C. TASK TRACKER. The cards are built by JavaScript from the data in dashboard.js -->
+    <section id="tracker" aria-labelledby="tracker-title">
+      <div class="tracker-head">
+        <div>
+          <h2 id="tracker-title">Task Tracker</h2>
+          <p>All 8 internship tasks in order. Tasks load from the TechBridge API. Use <strong>View Task</strong> for details and <strong>Mark as Completed</strong> when you finish one.</p>
+        </div>
+        <button type="button" class="btn-reset" id="reset-progress">Reset demo progress</button>
+      </div>
+
+      <div class="chips" role="group" aria-label="Filter tasks by status">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true"><span>All</span><span class="f-count"></span></button>
+        <button type="button" class="chip chip-done" data-filter="completed" aria-pressed="false"><span>Completed</span><span class="f-count"></span></button>
+        <button type="button" class="chip chip-now" data-filter="in-progress" aria-pressed="false"><span>In Progress</span><span class="f-count"></span></button>
+        <button type="button" class="chip chip-todo" data-filter="not-started" aria-pressed="false"><span>Not Started</span><span class="f-count"></span></button>
+      </div>
+
+      <p class="state-msg" id="task-state" role="status" aria-live="polite">Loading tasks...</p>
+      <p class="result-count" id="task-count" aria-live="polite"></p>
+      <ul class="task-grid" id="task-grid"></ul>
+      <div class="no-results" id="task-empty" hidden>
+        <h3>No tasks in this group</h3>
+        <p>Nothing matches this filter right now. Try another one.</p>
+      </div>
+
+      <noscript><p class="noscript-note">The dashboard needs JavaScript to show your tasks. Please turn JavaScript on and reload the page.</p></noscript>
+    </section>
+
+    <!-- D. CHALLENGE HUB (connects to Task 5) -->
+    <section id="hub-link" aria-labelledby="hub-title">
+      <div class="glow glow-1" aria-hidden="true"></div>
+      <div class="glow glow-3" aria-hidden="true"></div>
+      <div class="hub-card">
+        <div>
+          <h2 id="hub-title">Challenge Hub</h2>
+          <p class="hub-big"><strong id="challenge-count">10</strong> Challenges Available</p>
+          <p>Want extra practice? Explore challenges in Data Analytics and Web Development, from Beginner to Advanced.</p>
+          <p class="hub-pills">
+            <span class="pill-data" id="pill-data">5 Data Analytics</span>
+            <span class="pill-web" id="pill-web">5 Web Development</span>
+          </p>
+        </div>
+        <a class="btn btn-primary" href="challenges.html">Explore Challenges</a>
+      </div>
+    </section>
+
+    <!-- E. MODERN WEB TECHNOLOGIES (Technology Explorer) -->
+    <section id="tech" aria-labelledby="tech-title">
+      <h2 id="tech-title">Modern Web Technologies</h2>
+      <p>A complete web platform is built from many pieces. Pick a technology to see what it is and what people use it for.</p>
+
+      <div class="tech-explorer">
+        <div class="tech-buttons" role="group" aria-label="Choose a technology">
+          <button type="button" class="tech-btn" data-tech="nextjs" aria-pressed="true"><strong>Next.js</strong><span>React framework</span></button>
+          <button type="button" class="tech-btn" data-tech="vue" aria-pressed="false"><strong>Vue.js</strong><span>Friendly UI framework</span></button>
+          <button type="button" class="tech-btn" data-tech="angular" aria-pressed="false"><strong>Angular</strong><span>Full framework by Google</span></button>
+          <button type="button" class="tech-btn" data-tech="backend" aria-pressed="false"><strong>Backend</strong><span>The server side</span></button>
+        </div>
+        <div class="tech-panel" id="tech-panel" aria-live="polite"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Task details pop-up -->
+  <dialog id="task-modal" aria-labelledby="task-modal-title">
+    <div id="task-modal-body"></div>
+  </dialog>
+
+  <!-- Small message that appears when something changes -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer id="site-footer">
+    <p><strong>TechBridge</strong> by Baselink Services Limited</p>
+    <p>Bridging Learning to Real-World Experience</p>
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="challenges.html">Challenge Hub</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <ul class="social-links">
+      <li><a href="https://www.linkedin.com/company/techbridge-services/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/p/Baselink-Services-100066771475783/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="https://chat.whatsapp.com/FqpBvYS4oaK32cXDxc8JIS" target="_blank" rel="noopener noreferrer">WhatsApp Community</a></li>
+    </ul>
+    <p>&copy; 2026 Baselink Services Limited. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

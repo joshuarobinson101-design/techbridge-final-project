@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search TechBridge tasks and challenges.">
+  <title>Search | TechBridge</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/api.js" defer></script>
+  <script src="scripts/search.js" defer></script>
+</head>
+<body class="challenges-page">
+  <header id="site-header">
+    <a href="index.html" class="logo-link"><img src="../assets/images/techbridge.png" alt="TechBridge logo" width="160"></a>
+    <nav id="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="challenges.html">Challenge Hub</a></li>
+        <li><a href="search.html" aria-current="page">Search</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="hero">
+      <h1>Search</h1>
+      <p class="tagline">Find a task or a challenge</p>
+      <p class="hero-text">Try words like JavaScript, SQL, dashboard or forms.</p>
+    </section>
+    <section id="search-section">
+      <form id="search-form" class="search-form" role="search">
+        <div class="field">
+          <label for="q">Search tasks and challenges</label>
+          <input type="search" id="q" placeholder="e.g. JavaScript" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      <p class="state-msg" id="search-state" role="status" aria-live="polite" hidden></p>
+      <div id="results"></div>
+    </section>
+  </main>
+  <footer id="site-footer">
+    <p><strong>TechBridge</strong> by Baselink Services Limited</p>
+    <p>Bridging Learning to Real-World Experience</p>
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="challenges.html">Challenge Hub</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <ul class="social-links">
+      <li><a href="https://www.linkedin.com/company/techbridge-services/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/p/Baselink-Services-100066771475783/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="https://chat.whatsapp.com/FqpBvYS4oaK32cXDxc8JIS" target="_blank" rel="noopener noreferrer">WhatsApp Community</a></li>
+    </ul>
+    <p>&copy; 2026 Baselink Services Limited. All rights reserved.</p>
+  </footer>
+</body>
+</html>
