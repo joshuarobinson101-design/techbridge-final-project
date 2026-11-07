@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Choose the Data Analytics or Web Development track and see all 8 tasks in the TechBridge 30-day practical internship, with start days and difficulty.">
+  <title>Internship Roadmap | TechBridge</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/script.js" defer></script>
+</head>
+<body class="tasks-page roadmap-page" data-track="data">
+
+  <header id="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="../assets/images/techbridge.png" alt="TechBridge logo" width="160">
+    </a>
+    <nav id="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="tasks.html">Internship Tasks</a></li>
+        <li><a href="roadmap.html" aria-current="page">Internship Roadmap</a></li>
+        <li><a href="challenges.html">Challenge Hub</a></li>
+        <li><a href="dashboard.html">Intern Dashboard</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="index.html#why-join">Why Join</a></li>
+        <li><a href="index.html#how-to-join">How to Join</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <h1>Internship Roadmap</h1>
+      <p class="tagline">Pick a track. See your next 30 days.</p>
+      <p class="hero-text">
+        The TechBridge internship is a 30-day practical internship with two tracks.
+        Choose one below to see all eight tasks, the day each one opens, and how the work gets harder.
+      </p>
+      <p>
+        <a class="btn btn-primary" href="https://forms.gle/8EbdSy5ttGfLZfjv5" target="_blank" rel="noopener noreferrer">Apply for the Internship</a>
+        <a class="btn btn-secondary" href="programs.html">View Programs</a>
+      </p>
+    </section>
+
+    <!-- Journey bar: JavaScript fills the empty <ol> with the days of the chosen track -->
+    <nav id="journey-bar" aria-label="Jump to a task on the 30-day timeline">
+      <p class="jb-title">Your 30-day journey</p>
+      <ol class="jb-track" id="jb-track"></ol>
+    </nav>
+
+    <section id="choose">
+      <h2>Choose your track</h2>
+      <p>Select a track and the roadmap below changes straight away.</p>
+
+      <div class="track-picker" role="group" aria-label="Internship track">
+        <button type="button" class="track-btn" data-track="data" aria-pressed="true">
+          <strong>Data Analytics</strong>
+          <span>Spreadsheets, SQL and insights</span>
+        </button>
+        <button type="button" class="track-btn" data-track="web" aria-pressed="false">
+          <strong>Web Development</strong>
+          <span>HTML, CSS, JavaScript and real web projects</span>
+        </button>
+      </div>
+
+      <div class="viewing" aria-live="polite">
+        <div>
+          <p class="viewing-label">Currently viewing</p>
+          <h3 id="viewing-name">Data Analytics</h3>
+          <p class="viewing-summary" id="viewing-summary"></p>
+        </div>
+        <p class="badge-30">30-Day Practical Internship</p>
+      </div>
+
+      <noscript><p class="noscript-note">The roadmap needs JavaScript to show the tasks. Please turn JavaScript on and reload the page.</p></noscript>
+    </section>
+
+    <section id="journey">
+      <h2>The eight tasks, in order</h2>
+      <p>Tasks open on Days 1, 4, 8, 11, 15, 19, 22 and 26. Each one is a step up from the last.</p>
+      <p class="level-key" id="level-key">
+        <span class="level-label">Difficulty</span>
+        <span class="level-chip lvl-1">Beginner</span>
+        <span class="level-chip lvl-2">Beginner → Intermediate</span>
+        <span class="level-chip lvl-3">Intermediate</span>
+      </p>
+
+      <!-- JavaScript fills this list with the 8 task cards -->
+      <ol class="timeline" id="timeline"></ol>
+    </section>
+
+    <section id="apply">
+      <h2>Ready to start Task 1?</h2>
+      <p>Apply for the TechBridge internship and choose your track on the form.</p>
+      <p>
+        <a class="btn btn-primary" href="https://forms.gle/8EbdSy5ttGfLZfjv5" target="_blank" rel="noopener noreferrer">Apply for the Internship</a>
+        <a class="btn btn-secondary" href="index.html">Back to Homepage</a>
+      </p>
+    </section>
+  </main>
+
+  <footer id="site-footer">
+    <p><strong>TechBridge</strong> by Baselink Services Limited</p>
+    <p>Bridging Learning to Real-World Experience</p>
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="programs.html">Programs</a></li>
+        <li><a href="tasks.html">Internship Tasks</a></li>
+        <li><a href="roadmap.html">Internship Roadmap</a></li>
+        <li><a href="challenges.html">Challenge Hub</a></li>
+        <li><a href="dashboard.html">Intern Dashboard</a></li>
+        <li><a href="index.html#how-to-join">How to Join</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <ul class="social-links">
+      <li><a href="https://www.linkedin.com/company/techbridge-services/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://www.facebook.com/p/Baselink-Services-100066771475783/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="https://chat.whatsapp.com/FqpBvYS4oaK32cXDxc8JIS" target="_blank" rel="noopener noreferrer">WhatsApp Community</a></li>
+    </ul>
+    <p>&copy; 2026 Baselink Services Limited. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
